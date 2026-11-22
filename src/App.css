@@ -1,0 +1,399 @@
+:root {
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  color: #473c34;
+  background: #fff9f3;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #e7a45d;
+  outline-offset: 2px;
+}
+
+.app {
+  width: min(100% - 32px, 760px);
+  margin: 42px auto 80px;
+}
+.app-header {
+  margin-bottom: 24px;
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #9b5729;
+}
+.app-header p {
+  margin: 8px 0 0;
+  color: #8c7c6d;
+  font-size: 0.88rem;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 15px 18px;
+  background: #fff;
+  border: 1px solid #f0dfd0;
+  border-radius: 14px;
+}
+.summary-label {
+  color: #806e60;
+  font-size: 0.85rem;
+}
+.summary-count {
+  font-size: 1.5rem;
+  color: #c36a2d;
+  font-variant-numeric: tabular-nums;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #f0dfd0;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 5px 20px #a36a3710;
+}
+h2 {
+  font-size: 1.04rem;
+  margin: 0 0 16px;
+}
+.task-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-field label {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #736153;
+}
+.form-field .emptyTaskName {
+  display: inline-block;
+  flex: 3;
+  margin: 0 0 0 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #b30d0d;
+}
+.task-name-field {
+  flex: 1;
+  min-width: 0;
+}
+.priority-field {
+  width: 105px;
+}
+.form-field input,
+.form-field select {
+  height: 44px;
+  border: 1px solid #e4d5c9;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: #fffdfb;
+  color: #473c34;
+}
+.form-field input::placeholder {
+  color: #aa9a8e;
+}
+
+.form-field input.edit-taskName-input::placeholder {
+  color: #dd7d7d;
+}
+
+.primary-button {
+  min-width: 86px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: #e7833e;
+  color: #fff;
+  font-weight: 700;
+}
+.primary-button:hover {
+  background: #d6722e;
+}
+.form-message {
+  min-height: 0;
+  margin: 0;
+  color: #b43c2e;
+  font-size: 0.85rem;
+}
+.form-message:not(:empty) {
+  margin-top: 10px;
+}
+
+.tasks-section {
+  margin-top: 30px;
+}
+.tasks-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.tasks-heading-row h2 {
+  margin: 0;
+}
+.filters {
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #f6e9dc;
+}
+.filter-button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #806d5c;
+  font-size: 0.82rem;
+}
+.filter-button.active {
+  background: #fff;
+  color: #bc642b;
+  font-weight: 700;
+  box-shadow: 0 2px 6px #8c5a2b19;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 82px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #f0dfd0;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #a36a370b;
+}
+.task-check {
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  accent-color: #e7833e;
+  cursor: pointer;
+}
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+.task-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 9px;
+}
+.task-title {
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.priority {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.priority-high {
+  background: #fff0e8;
+  color: #c65530;
+}
+.priority-medium {
+  background: #fff4d7;
+  color: #a67720;
+}
+.priority-low {
+  background: #eaf5e9;
+  color: #4c8754;
+}
+.completed-at {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  font-size: 0.7rem;
+  color: #988779;
+}
+.task-card.completed .task-title {
+  color: #988b80;
+  text-decoration: line-through;
+}
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 9px;
+  background: #f8f2eb;
+  color: #806c5d;
+  font-size: 1.2rem;
+}
+.icon-button:hover {
+  background: #f1e4d7;
+}
+.delete-button:hover {
+  background: #ffebe6;
+  color: #bd5036;
+}
+.empty-message {
+  padding: 32px 16px;
+  text-align: center;
+  border: 1px dashed #e6cfbc;
+  border-radius: 14px;
+  color: #958272;
+}
+
+/* 編集モードで使うスタイル。Reactで編集機能を作るときに利用できます。 */
+.edit-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.edit-input {
+  flex: 1;
+  min-width: 130px;
+  padding: 8px 10px;
+  border: 1px solid #e4d5c9;
+  border-radius: 8px;
+}
+.small-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #e7833e;
+  color: white;
+}
+.small-button.secondary {
+  background: #f1e9e1;
+  color: #6c5848;
+}
+
+/*///////////////////////////////////*/
+/* 新規登録時に「未完了」ボタンを強調する */
+@keyframes notify-incomplete {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.06);
+    background-color: #baebc6;
+    color: #727272;
+    font-weight: 800;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.filter-button.notify {
+  animation: notify-incomplete 1s ease-in-out;
+}
+
+/* 動きを減らす設定への対応 */
+@media (prefers-reduced-motion: reduce) {
+  .filter-button.notify {
+    animation: none;
+    background-color: #ffe0b2;
+  }
+}
+/*///////////////////////////////////*/
+
+@media (max-width: 560px) {
+  .app {
+    width: min(100% - 24px, 760px);
+    margin-top: 24px;
+  }
+  .summary {
+    gap: 7px;
+  }
+  .summary-item {
+    padding: 12px 9px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .summary-label {
+    font-size: 0.75rem;
+  }
+  .summary-count {
+    font-size: 1.3rem;
+  }
+  .panel {
+    padding: 16px;
+  }
+  .task-form {
+    flex-wrap: wrap;
+  }
+  .task-name-field {
+    flex-basis: 100%;
+  }
+  .priority-field {
+    flex: 1;
+  }
+  .primary-button {
+    flex: 1;
+  }
+  .tasks-heading-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .filters {
+    align-self: flex-start;
+  }
+  .task-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .icon-button {
+    width: 32px;
+    height: 32px;
+  }
+}
